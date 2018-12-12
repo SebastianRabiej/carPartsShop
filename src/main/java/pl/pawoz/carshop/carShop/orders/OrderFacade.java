@@ -5,11 +5,19 @@ import pl.pawoz.carshop.carShop.cart.Cart;
 
 public class OrderFacade {
 
-    public OrderId makeOrder(Cart cart){
-        return null;
+    private OrderRepository orderRepository;
+
+    public OrderFacade(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
     }
 
-    public OrderDTO findOrderById(){
-        return null;
+    public OrderId makeOrder(Cart cart) {
+        Order order = new Order();
+        orderRepository.save(order);
+        return order.getOrderId();
+    }
+
+    public Order findOrderById(OrderId orderId) {
+        return orderRepository.find(orderId);
     }
 }
