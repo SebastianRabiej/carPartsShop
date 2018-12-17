@@ -1,8 +1,9 @@
 package pl.pawoz.carshop.carShop.cart;
 
 public class OrderItem {
-    int amount;
-    Product product;
+    private int amount;
+
+    private Product product;
 
     public OrderItem(int amount, Product product) {
         this.amount = amount;
@@ -11,6 +12,14 @@ public class OrderItem {
 
     public void increaseAmountBy(int amount) {
         this.amount += amount;
+    }
+
+    public double summaryPrice() {
+        return amount * product.getPrice();
+    }
+
+    public int getAmount() {
+        return amount;
     }
 
     public Product getProduct() {

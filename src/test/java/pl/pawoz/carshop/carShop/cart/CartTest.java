@@ -7,6 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CartTest {
 
+    final double ANY_PRICE = 3;
+
     @Test
     public void should_return_empty_list_when_cart_is_empty() {
         //Given
@@ -25,7 +27,7 @@ public class CartTest {
         Cart cart = new Cart();
 
         //When
-        cart.addProductToCart(19, new Wheels());
+        cart.addProductToCart(19, new Wheels(ANY_PRICE));
 
         //Then
         assertThat(cart.getProductsInCart()).hasSize(1);
@@ -38,7 +40,7 @@ public class CartTest {
 
         //When
         for (int i = 0; i < 2; i++) {
-            cart.addProductToCart(19, new Wheels());
+            cart.addProductToCart(19, new Wheels(ANY_PRICE));
         }
 
         //Then

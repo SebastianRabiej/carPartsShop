@@ -1,9 +1,12 @@
 package pl.pawoz.carshop.carShop.orders;
 
 
-import pl.pawoz.carshop.carShop.cart.Cart;
+import pl.pawoz.carshop.carShop.cart.OrderItem;
+
+import java.util.List;
 
 public class OrderFacade {
+
 
     private OrderRepository orderRepository;
 
@@ -11,13 +14,22 @@ public class OrderFacade {
         this.orderRepository = orderRepository;
     }
 
-    public OrderId makeOrder(Cart cart) {
-        Order order = new Order();
+    public OrderId makeOrder(List<OrderItem> orderItems) {
+        double summaryPriceForProductsInCart = 0;
+
+        for (OrderItem orderItem : orderItems) {
+            summaryPriceForProductsInCart += orderItem.summaryPrice();
+        }
+
+        Order order = new Order(summaryPriceForProductsInCart);
+
         orderRepository.save(order);
+
         return order.getOrderId();
     }
 
-    public Order findOrderById(OrderId orderId) {
-        return orderRepository.find(orderId);
+    public OrderDTO findOrderById(OrderId orderId) {
+        Order order = orderRepository.find(orderId);
+        return new OrderDTO(order.getOrderId(), order.getSummaryPrice());
     }
 }
