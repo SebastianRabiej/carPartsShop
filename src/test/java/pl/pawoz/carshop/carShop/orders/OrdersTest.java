@@ -1,14 +1,11 @@
 package pl.pawoz.carshop.carShop.orders;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import pl.pawoz.carshop.carShop.cart.Cart;
 import pl.pawoz.carshop.carShop.cart.Doors;
-import pl.pawoz.carshop.carShop.cart.OrderItem;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import pl.pawoz.carshop.carShop.orders.out.OrderDTO;
+import pl.pawoz.carshop.carShop.shared.OrderId;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

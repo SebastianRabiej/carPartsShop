@@ -1,6 +1,8 @@
-package pl.pawoz.carshop.carShop.orders;
+package pl.pawoz.carshop.carShop.orders.out;
 
-class OrderDTO {
+import pl.pawoz.carshop.carShop.shared.OrderId;
+
+public class OrderDTO {
     private OrderId orderId;
 
     private double summaryPrice;

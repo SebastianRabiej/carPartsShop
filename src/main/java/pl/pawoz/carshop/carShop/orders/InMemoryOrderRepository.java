@@ -1,8 +1,6 @@
 package pl.pawoz.carshop.carShop.orders;
 
-import pl.pawoz.carshop.carShop.orders.Order;
-import pl.pawoz.carshop.carShop.orders.OrderId;
-import pl.pawoz.carshop.carShop.orders.OrderRepository;
+import pl.pawoz.carshop.carShop.shared.OrderId;
 
 import java.util.HashMap;
 import java.util.Map;

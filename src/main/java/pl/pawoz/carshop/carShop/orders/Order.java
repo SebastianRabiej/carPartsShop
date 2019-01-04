@@ -1,5 +1,7 @@
 package pl.pawoz.carshop.carShop.orders;
 
+import pl.pawoz.carshop.carShop.shared.OrderId;
+
 class Order {
     private OrderId orderId;
     private double summaryPrice;
